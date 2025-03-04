@@ -6,7 +6,7 @@
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 22:59:13 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/01 23:25:10 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/04 20:20:46 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Harl
         void warning( void );
         void error( void );
     public:
+        Harl();
+        ~Harl();
         void complain( std::string level );
 };
 

@@ -6,21 +6,20 @@
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:20:43 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/01 23:20:44 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/04 20:21:18 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(int ac, char **av)
+int main()
 {
-    if (ac != 2)
-    {
-        std::cout << "Usage: ./Harl level" << std::endl;
-        return 1;
-    }
-
     Harl harl;
-    harl.complain(av[1]);
+
+    harl.complain("DEBUG");
+    // harl.complain("INFO");
+    // harl.complain("WARNING");
+    // harl.complain("ERROR");
+   
     return 0;
 }

@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/04 20:06:16 by amayuk            #+#    #+#             */
+/*   Updated: 2025/03/04 20:06:17 by amayuk           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
-Zombie* Zombie::newZombie(std::string name)
+Zombie* newZombie(std::string name)
 {
-	Zombie *zombie = new Zombie();
-	zombie->setName(name);
-	return zombie;
+    return new Zombie(name);
 }

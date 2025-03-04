@@ -6,11 +6,15 @@
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 23:36:16 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/01 23:41:14 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/04 20:20:36 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+Harl::Harl() {}
+
+Harl::~Harl() {}
 
 void Harl::debug(void)
 {

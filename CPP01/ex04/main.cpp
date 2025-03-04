@@ -28,7 +28,7 @@ int main(int ac, char **av)
         return 1;
     }
 
-    output.open(outputFilename);
+    output.open(outputFilename.c_str());
     if (!output.is_open())
     {
         std::cout << "Error: could not open file" << std::endl;

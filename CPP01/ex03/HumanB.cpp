@@ -6,13 +6,13 @@
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 22:03:15 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/01 22:25:10 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/04 20:19:17 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : weapon(nullptr)
+HumanB::HumanB(std::string name) : weapon(NULL)
 {
     this->name = name;
 }
