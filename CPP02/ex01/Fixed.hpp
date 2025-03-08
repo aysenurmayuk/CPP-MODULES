@@ -6,7 +6,7 @@
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 00:06:06 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/02 00:46:13 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/05 20:29:16 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@
 
 class Fixed {
     private:
-        int value;
+        int fixedPoint;
         static const int fractionalBits = 8;
     public:
         Fixed();
         ~Fixed();
-        Fixed(const int value);
-        Fixed(const float value);
+        Fixed(const int fixed);
+        Fixed(const float fixed);
         Fixed(const Fixed &fixed);
         Fixed &operator=(const Fixed &fixed);
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
         float toFloat(void) const;
         int toInt(void) const;
 };

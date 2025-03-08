@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixec.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 00:06:06 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/02 00:10:40 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/05 20:14:38 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Fixed {
     private:
-        int value;
+        int fixedPoint;
         static const int fractionalBits = 8;
     public:
         Fixed();
