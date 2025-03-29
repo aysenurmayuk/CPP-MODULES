@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 14:57:57 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/19 16:28:03 by amayuk           ###   ########.fr       */
+/*   Created: 2025/03/17 01:34:03 by amayuk            #+#    #+#             */
+/*   Updated: 2025/03/21 15:00:29 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include   "ClapTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-    ClapTrap clapTrap("Clappy");
-    ClapTrap clapTrap2(clapTrap); 
-    ClapTrap clapTrap3; 
-    clapTrap3 = clapTrap; 
-    
-    std::cout << std::endl;
-    
-    clapTrap.attack("enemy");
-    clapTrap.takeDamage(5);  
-    clapTrap.beRepaired(5); 
-    clapTrap.attack("enemy"); 
+    public:
+        Dog();
+        ~Dog();
+        Dog(Dog const & dog);
+        Dog & operator=(Dog const & dog);
+        void makeSound() const;
+};
 
-    return 0;
-}
+#endif

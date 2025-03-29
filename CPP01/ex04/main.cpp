@@ -13,7 +13,6 @@ int main(int ac, char **av)
     std::size_t pos = filename.find_last_of(".");
     if (pos != std::string::npos)
         filename = filename.substr(0, pos);
-
     std::string s1 = av[2];
     std::string s2 = av[3];
     std::string outputFilename = filename + ".replace";

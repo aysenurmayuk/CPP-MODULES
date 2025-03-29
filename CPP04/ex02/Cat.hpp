@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/02 00:06:06 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/08 17:07:35 by amayuk           ###   ########.fr       */
+/*   Created: 2025/03/17 01:35:52 by amayuk            #+#    #+#             */
+/*   Updated: 2025/03/21 16:57:01 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Fixed {
+class Cat : public Animal {
     private:
-        int fixedPoint;
-        static const int fractionalBits = 8;
+        Brain *brain;
+
     public:
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &fixed);
-        Fixed &operator=(const Fixed &fixed);
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
-};
+        Cat();
+        ~Cat();
+        Cat(const Cat &cat);
+        Cat & operator=(const Cat &cat);
+        
+        void makeSound() const;
+        void setCatIdea(std::string idea);
+        void printIdeas(int index);
+        void printBrainAddress();
+    };
 
 #endif

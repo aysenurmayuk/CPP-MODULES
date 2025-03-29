@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 14:57:57 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/19 16:28:03 by amayuk           ###   ########.fr       */
+/*   Created: 2025/03/14 15:14:16 by amayuk            #+#    #+#             */
+/*   Updated: 2025/03/16 19:48:09 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include   "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-    ClapTrap clapTrap("Clappy");
-    ClapTrap clapTrap2(clapTrap); 
-    ClapTrap clapTrap3; 
-    clapTrap3 = clapTrap; 
-    
-    std::cout << std::endl;
-    
-    clapTrap.attack("enemy");
-    clapTrap.takeDamage(5);  
-    clapTrap.beRepaired(5); 
-    clapTrap.attack("enemy"); 
+    public:
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(FragTrap const & fragTrap);
+        ~FragTrap();
+        FragTrap & operator=(FragTrap const & fragTrap);
+        void highFivesGuys(void);
+};
 
-    return 0;
-}
+#endif

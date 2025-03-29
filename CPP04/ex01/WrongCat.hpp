@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 14:57:57 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/19 16:28:03 by amayuk           ###   ########.fr       */
+/*   Created: 2025/03/17 14:54:39 by amayuk            #+#    #+#             */
+/*   Updated: 2025/03/20 16:24:09 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include   "ClapTrap.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int main()
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-    ClapTrap clapTrap("Clappy");
-    ClapTrap clapTrap2(clapTrap); 
-    ClapTrap clapTrap3; 
-    clapTrap3 = clapTrap; 
-    
-    std::cout << std::endl;
-    
-    clapTrap.attack("enemy");
-    clapTrap.takeDamage(5);  
-    clapTrap.beRepaired(5); 
-    clapTrap.attack("enemy"); 
+    public:
+        WrongCat();
+        ~WrongCat();
+        WrongCat(WrongCat const & wrongCat);
+        WrongCat & operator=(WrongCat const & wrongCat);
+        void makeSound() const;
+};
 
-    return 0;
-}
+#endif

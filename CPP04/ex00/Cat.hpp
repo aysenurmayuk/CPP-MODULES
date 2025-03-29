@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 14:57:57 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/19 16:28:03 by amayuk           ###   ########.fr       */
+/*   Created: 2025/03/17 01:35:52 by amayuk            #+#    #+#             */
+/*   Updated: 2025/03/21 15:00:24 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include   "ClapTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-    ClapTrap clapTrap("Clappy");
-    ClapTrap clapTrap2(clapTrap); 
-    ClapTrap clapTrap3; 
-    clapTrap3 = clapTrap; 
-    
-    std::cout << std::endl;
-    
-    clapTrap.attack("enemy");
-    clapTrap.takeDamage(5);  
-    clapTrap.beRepaired(5); 
-    clapTrap.attack("enemy"); 
+    public:
+        Cat();
+        ~Cat();
+        Cat(const Cat &cat);
+        Cat &operator = (const Cat &cat);
+        void makeSound() const;
+};
 
-    return 0;
-}
+#endif

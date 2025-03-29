@@ -6,7 +6,7 @@
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 00:06:08 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/05 20:27:16 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/15 14:58:28 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ Fixed::Fixed()
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int value)
+Fixed::~Fixed()
 {
-    std::cout << "Int constructor called" << std::endl;
-    this->fixedPoint = value << this->fractionalBits;
+    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const float value)
@@ -29,17 +28,19 @@ Fixed::Fixed(const float value)
     std::cout << "Float constructor called" << std::endl;
     this->fixedPoint = roundf(value * (1 << this->fractionalBits));
 }
+Fixed::Fixed(const int value)
+{
+    std::cout << "Int constructor called" << std::endl;
+    this->fixedPoint = value << this->fractionalBits;
+}
+
 
 Fixed::Fixed(const Fixed &fixed)
 {   
-    *this = fixed;
     std::cout << "Copy constructor called" << std::endl;
+    *this = fixed;
 }
 
-Fixed::~Fixed()
-{
-    std::cout << "Destructor called" << std::endl;
-}
 
 Fixed &Fixed::operator=(const Fixed &fixed)
 {
@@ -49,16 +50,16 @@ Fixed &Fixed::operator=(const Fixed &fixed)
     return *this;
 }
 
+int Fixed::toInt(void) const
+{
+    return this->fixedPoint >> this->fractionalBits;
+}
 
 float Fixed::toFloat(void) const
 {
     return (float)this->fixedPoint / (1 << this->fractionalBits);
 }
 
-int Fixed::toInt(void) const
-{
-    return this->fixedPoint >> this->fractionalBits;
-}
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {

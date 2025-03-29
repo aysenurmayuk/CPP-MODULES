@@ -6,25 +6,31 @@
 /*   By: amayuk <amayuk@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:57:57 by amayuk            #+#    #+#             */
-/*   Updated: 2025/03/19 16:28:03 by amayuk           ###   ########.fr       */
+/*   Updated: 2025/03/19 16:23:18 by amayuk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include   "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ClapTrap clapTrap("Clappy");
-    ClapTrap clapTrap2(clapTrap); 
-    ClapTrap clapTrap3; 
-    clapTrap3 = clapTrap; 
-    
-    std::cout << std::endl;
-    
-    clapTrap.attack("enemy");
-    clapTrap.takeDamage(5);  
-    clapTrap.beRepaired(5); 
-    clapTrap.attack("enemy"); 
+    ClapTrap clap("Clappy");
+    clap.attack("Target1");
+    clap.takeDamage(5);
+    clap.beRepaired(3);
+
+    std::cout << "---------------------" << std::endl;
+
+    ScavTrap scav("Scavy");
+    scav.attack("Target2");
+    scav.guardGate();
+
+    std::cout << "---------------------" << std::endl;
+
+    FragTrap frag("Fraggy");
+    frag.attack("Target3");
+    frag.highFivesGuys();
 
     return 0;
 }
